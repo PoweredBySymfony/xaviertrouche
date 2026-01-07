@@ -4,17 +4,19 @@ import { Menu, X, Github, Linkedin, Mail } from "lucide-react";
 import { ThemeToggle } from "./ui/ThemeToggle";
 import { Button } from "./ui/button";
 
+import { Link, useLocation } from "react-router-dom";
+
 const navItems = [
-  { name: "Accueil", href: "#hero" },
-  { name: "Compétences", href: "#skills" },
-  { name: "Parcours", href: "#timeline" },
-  { name: "Contact", href: "#contact" },
+  { name: "Accueil", href: "/", isRoute: true },
+  { name: "Projets", href: "/portfolio", isRoute: true },
+  { name: "Apprentissage", href: "/apprentissage", isRoute: true },
+  { name: "Contact", href: "/#contact", isRoute: false },
 ];
 
 const socialLinks = [
   { icon: Github, href: "https://github.com/bakaasta", label: "GitHub" },
-  { icon: Linkedin, href: "https://linkedin.com/in/xavier-trouche", label: "LinkedIn" },
-  { icon: Mail, href: "mailto:contact@xaviertrouche.dev", label: "Email" },
+  { icon: Linkedin, href: "https://www.linkedin.com/in/trouche-xavier-918353218/", label: "LinkedIn" },
+  { icon: Mail, href: "mailto:xavier.trouche@outlook.fr", label: "Email" },
 ];
 
 export const Header = () => {
@@ -42,26 +44,36 @@ export const Header = () => {
     >
       <div className="section-container flex items-center justify-between">
         {/* Logo */}
-        <a href="#hero" className="flex items-center gap-2 group">
+        <Link to="/" className="flex items-center gap-2 group">
           <div className="w-10 h-10 rounded-xl bg-gradient-to-br from-primary to-accent flex items-center justify-center text-primary-foreground font-bold text-lg transition-transform duration-300 group-hover:scale-110">
             XT
           </div>
           <span className="font-semibold text-foreground hidden sm:block">
             Xavier Trouche
           </span>
-        </a>
+        </Link>
 
         {/* Desktop Navigation */}
         <nav className="hidden md:flex items-center gap-1">
-          {navItems.map((item) => (
-            <a
-              key={item.name}
-              href={item.href}
-              className="px-4 py-2 text-sm font-medium text-muted-foreground hover:text-foreground transition-colors link-underline"
-            >
-              {item.name}
-            </a>
-          ))}
+          {navItems.map((item) =>
+            item.isRoute ? (
+              <Link
+                key={item.name}
+                to={item.href}
+                className="px-4 py-2 text-sm font-medium text-muted-foreground hover:text-foreground transition-colors link-underline"
+              >
+                {item.name}
+              </Link>
+            ) : (
+              <a
+                key={item.name}
+                href={item.href}
+                className="px-4 py-2 text-sm font-medium text-muted-foreground hover:text-foreground transition-colors link-underline"
+              >
+                {item.name}
+              </a>
+            )
+          )}
         </nav>
 
         {/* Right section */}
@@ -108,16 +120,27 @@ export const Header = () => {
             className="md:hidden glass-card mt-2 mx-4 rounded-xl overflow-hidden"
           >
             <nav className="flex flex-col p-4 gap-2">
-              {navItems.map((item) => (
-                <a
-                  key={item.name}
-                  href={item.href}
-                  onClick={() => setIsMobileMenuOpen(false)}
-                  className="px-4 py-3 text-sm font-medium text-muted-foreground hover:text-foreground hover:bg-secondary/50 rounded-lg transition-colors"
-                >
-                  {item.name}
-                </a>
-              ))}
+              {navItems.map((item) =>
+                item.isRoute ? (
+                  <Link
+                    key={item.name}
+                    to={item.href}
+                    onClick={() => setIsMobileMenuOpen(false)}
+                    className="px-4 py-3 text-sm font-medium text-muted-foreground hover:text-foreground hover:bg-secondary/50 rounded-lg transition-colors"
+                  >
+                    {item.name}
+                  </Link>
+                ) : (
+                  <a
+                    key={item.name}
+                    href={item.href}
+                    onClick={() => setIsMobileMenuOpen(false)}
+                    className="px-4 py-3 text-sm font-medium text-muted-foreground hover:text-foreground hover:bg-secondary/50 rounded-lg transition-colors"
+                  >
+                    {item.name}
+                  </a>
+                )
+              )}
               <div className="flex items-center gap-4 pt-4 mt-2 border-t border-border">
                 {socialLinks.map((link) => (
                   <a
