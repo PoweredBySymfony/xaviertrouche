@@ -6,8 +6,8 @@ const contactLinks = [
   {
     icon: Mail,
     label: "Email",
-    value: "contact@xaviertrouche.dev",
-    href: "mailto:contact@xaviertrouche.dev",
+    value: "xavier.trouche@outlook.fr",
+    href: "mailto:xavier.trouche@outlook.fr",
   },
   {
     icon: Github,
@@ -19,7 +19,7 @@ const contactLinks = [
     icon: Linkedin,
     label: "LinkedIn",
     value: "Xavier Trouche",
-    href: "https://linkedin.com/in/xavier-trouche",
+    href: "https://www.linkedin.com/in/trouche-xavier-918353218/",
   },
   {
     icon: MapPin,
@@ -112,7 +112,7 @@ export const ContactSection = () => {
               className="bg-gradient-to-r from-primary to-accent hover:opacity-90 text-primary-foreground px-8 gap-2 shadow-lg"
               asChild
             >
-              <a href="mailto:contact@xaviertrouche.dev">
+              <a href="mailto:xavier.trouche@outlook.fr">
                 <Mail className="w-4 h-4" />
                 M'envoyer un message
               </a>
