@@ -60,8 +60,8 @@ export const experienceDetails = {
       },
       githubUrl: "https://github.com/BakaAsta/leonn",
       images: [
-        { src: "/placeholder.svg", alt: "Apercu du tableau de bord Leonn" },
-        { src: "/placeholder.svg", alt: "Apercu de la gestion des prets Leonn" }
+        { src: "/img/portfolio/leonn.png", alt: "Apercu du tableau de bord Leonn" },
+        { src: "/img/listeProductAvailableUser.png", alt: "Apercu de la gestion des prets Leonn" }
       ]
     }
   }

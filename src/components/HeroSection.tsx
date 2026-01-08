@@ -67,7 +67,7 @@ export const HeroSection = () => {
             className="bg-gradient-to-r from-primary to-accent hover:opacity-90 text-primary-foreground px-8 gap-2 shadow-lg"
             asChild
           >
-            <a href="https://bakaasta.github.io/portfolio/assets/CV_Master.pdf" target="_blank" rel="noopener noreferrer">
+            <a href="/assets/CV_Master.pdf" target="_blank" rel="noopener noreferrer">
               <Download className="w-4 h-4" />
               Télécharger mon CV
             </a>

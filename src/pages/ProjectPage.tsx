@@ -167,6 +167,24 @@ const ProjectPage = () => {
               onClick={() => galleryRef.current?.fullScreen()}
             />
           </motion.section>
+
+          <motion.section
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.5, delay: 0.4 }}
+            className="mt-6 text-sm text-muted-foreground"
+          >
+            Pour plus de details, consultez le{" "}
+            <a
+              href={project.githubUrl}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="text-primary hover:underline"
+            >
+              depot du projet
+            </a>
+            .
+          </motion.section>
         </div>
       </main>
       <Footer />

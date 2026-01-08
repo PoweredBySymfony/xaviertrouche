@@ -28,106 +28,146 @@ export const projectDetails = {
   railsPt1: {
     slug: "railsPt1",
     title: "Les Aventuriers du Rail - Partie 1",
-    description: "Application compleete deeveloppeee eo partir d'un cahier des charges preecis avec une approche increementale.",
-    technologies: ["Java", "GitLab", "JUnit"],
+    description:
+      "Developpement d'une version en ligne du jeu Les Aventuriers du Rail avec une methode incrementale en trois phases.",
+    technologies: ["Java", "HTML", "JUnit", "GitLab"],
     categories: ["Java", "Web"],
     year: "2023",
     githubUrl: "https://github.com/BakaAsta/RailsIhmPart1",
     context:
-      "Projet reealisee dans le cadre des SAE S2.01 et S2.02 du BUT Informatique. Objectif : construire un moteur de jeu fideele aux reegles et une base solide pour les eevolutions suivantes.",
+      "Projet realise dans le cadre des SAE S2.01 et S2.02 du BUT Informatique pour construire un moteur de jeu fidele aux regles officielles.",
     methods: [
-      "Deecoupage increemental du backlog et livraisons reegulieeres.",
-      "Versioning GitLab et revues freequentes pour garder une base stable.",
-      "Tests unitaires JUnit pour seecuriser les reegles de jeu."
+      "Methodologie incrementale en trois phases : mecanique de jeu, algorithmes de graphes, interface JavaFX.",
+      "GitLab pour la gestion de version et la collaboration.",
+      "JUnit pour les tests unitaires.",
+      "JavaFX pour l'interface graphique."
     ],
     results: [
-      "Moteur de jeu conforme au cahier des charges.",
-      "Architecture modulaire preate pour les extensions (graphes, IHM).",
-      "Base de tests facilitant la validation des reegles."
+      "Un moteur de jeu respectant les regles officielles.",
+      "Une interface graphique intuitive pour visualiser les actions des joueurs.",
+      "Un systeme de tests unitaires validant la robustesse du code."
     ],
     skills: {
-      "C1 : Deeveloppement d'application": [
-        "Programmation orienteee objet en Java.",
-        "Conception d'algorithmes meetier."
+      "C1 : Realiser un developpement d'application": [
+        "Developpement oriente objet avec Java.",
+        "Implementation d'algorithmes de graphes pour optimiser le jeu."
       ],
-      "C2 : Optimisation": [
-        "Structuration du code pour limiter les reegressions.",
-        "Validation progressive des reegles par tests."
+      "C2 : Optimiser des applications": [
+        "Analyse et amelioration des performances de l'application."
+      ],
+      "C5 : Conduire un projet": [
+        "Organisation des taches et respect des echeances.",
+        "Suivi et validation des fonctionnalites via des tests unitaires."
+      ],
+      "C6 : Collaborer au sein d'une equipe informatique": [
+        "Utilisation de Git pour le travail collaboratif.",
+        "Participation active aux phases de conception et de developpement."
       ]
     },
     images: [
-      { src: "/placeholder.svg", alt: "Apercu du projet Aventuriers du Rail partie 1" },
-      { src: "/placeholder.svg", alt: "Interface du jeu Aventuriers du Rail partie 1" }
+      { src: "/img/portfolio/aventuriersRailsPt1.png", alt: "Interface du jeu" },
+      { src: "/img/railPt1Test.png", alt: "Resultats des tests" },
+      { src: "/img/railPt1Test2.png", alt: "Suite des tests" }
     ]
   },
   railsPt2: {
     slug: "railsPt2",
-    title: "Les Aventuriers du Rail - Oriente Graphes",
-    description: "Implementation d'algorithmes avances comme Dijkstra pour optimiser les trajets du jeu.",
-    technologies: ["Java", "Algorithmes", "Graphes"],
+    title: "Les Aventuriers du Graphe - Partie 2",
+    description:
+      "Modelisation du plateau sous forme de graphe et implementation d'algorithmes pour optimiser les trajets.",
+    technologies: ["Java", "JavaScript", "Python", "SCSS", "HTML"],
     categories: ["Java", "Web"],
     year: "2023",
     githubUrl: "https://github.com/BakaAsta/RailsIhmPart2",
     context:
-      "Suite du projet Aventuriers du Rail avec un focus sur la modelisation du plateau et l'optimisation des trajets.",
+      "Suite de la phase 1, cette etape visait a representer le plateau en graphe et a implementer des algorithmes de parcours pour determiner les chemins optimaux.",
     methods: [
-      "Modelisation du graphe et des poids pour representer le plateau.",
-      "Implementation de Dijkstra et validation par scenarios de test.",
-      "Comparaison des resultats avec les regles attendues."
+      "Iterations hebdomadaires pour valider chaque fonctionnalite.",
+      "GitHub pour la gestion de version.",
+      "JUnit pour les tests unitaires.",
+      "IntelliJ IDEA comme IDE principal."
     ],
     results: [
-      "Optimisation fiable des trajets en fonction des contraintes.",
-      "Structures de donnees adaptees aux parcours rapides.",
-      "Documentation technique pour faciliter la suite du projet."
+      "Modelisation du plateau en tant que graphe.",
+      "Algorithmes de parcours operationnels pour les chemins optimaux.",
+      "Interface mise a jour pour afficher les routes en surbrillance."
     ],
     skills: {
-      "C2 : Optimisation": [
-        "Selection d'algorithmes adaptes aux problemes.",
-        "Analyse de complexite et de performances."
+      "C1 : Realiser un developpement d'application": [
+        "Implementation d'algorithmes de graphes.",
+        "Tests et validation des fonctionnalites."
       ],
-      "C1 : Developpement d'application": [
-        "Integration de modules complexes dans un projet existant."
+      "C4 : Gerer des donnees de l'information": [
+        "Manipulation et structuration des graphes.",
+        "Analyse des performances des algorithmes."
+      ],
+      "C5 : Conduire un projet": [
+        "Gestion des taches et respect des echeances.",
+        "Suivi des objectifs avec des tests reguliers."
+      ],
+      "C6 : Collaborer au sein d'une equipe informatique": [
+        "Utilisation de Git pour la collaboration.",
+        "Travail en binome sur les algorithmes et tests."
       ]
     },
     images: [
-      { src: "/placeholder.svg", alt: "Apercu du projet Aventuriers du Rail graphes" }
+      { src: "/img/portfolio/graphe.png", alt: "Modele de graphe" },
+      { src: "/img/portfolio/graphePt3.png", alt: "Exemple d'algorithme de Dijkstra" },
+      { src: "/img/portfolio/graphePt2.png", alt: "Simulation de trajet" },
+      { src: "/img/portfolio/graphePt1.png", alt: "Representation du plateau" }
     ]
   },
   railsPt3: {
     slug: "railsPt3",
-    title: "Les Aventuriers du Rail - Version IHM",
-    description: "Version avec interface graphique complete orientee objet.",
-    technologies: ["Java", "JavaFX", "POO"],
+    title: "Les Aventuriers du Rail - Partie 3 : Interface Graphique",
+    description: "Interface graphique JavaFX pour le jeu Les Aventuriers du Rail.",
+    technologies: ["JavaFX", "CSS"],
     categories: ["Java"],
     year: "2023",
     githubUrl: "https://github.com/BakaAsta/RailsIhmPart3",
     context:
-      "Finalisation du projet avec une interface graphique JavaFX pour rendre l'experience plus intuitive.",
+      "Phase finale du projet visant a proposer une experience utilisateur fluide grace a une interface JavaFX connectee au moteur de jeu.",
     methods: [
-      "Design des ecrans et des interactions utilisateurs.",
-      "Separation MVC pour garder une logique metier claire.",
-      "Tests manuels sur les parcours critiques."
+      "Implementation progressive des composants graphiques.",
+      "GitLab pour la gestion de version.",
+      "Scene Builder pour la conception des vues.",
+      "IntelliJ IDEA comme environnement principal."
     ],
     results: [
-      "Interface fluide et accessible pour les joueurs.",
-      "Gestion des evenements et etats simplifiee.",
-      "Presentation solide pour la soutenance."
+      "Interface utilisateur ergonomique et intuitive.",
+      "Vues integrees pour le plateau, les cartes et la gestion des joueurs.",
+      "Interactions dynamiques pour la selection des routes et l'affichage des scores."
     ],
     skills: {
-      "C1 : Developpement d'application": [
-        "Developpement d'interfaces avec JavaFX.",
-        "Organisation MVC."
+      "C1 : Realiser un developpement d'application": [
+        "Creation et gestion des composants graphiques JavaFX.",
+        "Developpement de fonctionnalites interactives."
+      ],
+      "C2 : Concevoir des interfaces utilisateur": [
+        "Mise en place d'une IHM responsive et intuitive.",
+        "Utilisation des bindings et des evenements pour synchroniser l'interface."
+      ],
+      "C5 : Conduire un projet": [
+        "Planification des taches et respect des echeances.",
+        "Integration des fonctionnalites en equipe."
+      ],
+      "C6 : Collaborer au sein d'une equipe informatique": [
+        "Utilisation de GitLab pour la gestion collaborative.",
+        "Participation aux revues de code et aux tests."
       ]
     },
     images: [
-      { src: "/placeholder.svg", alt: "Interface JavaFX Aventuriers du Rail" }
+      { src: "/img/portfolio/img.png", alt: "Vue d'ensemble" },
+      { src: "/img/portfolio/IHMinfoJoueur.png", alt: "Vue joueur" },
+      { src: "/img/portfolio/IHMchoixCarte.png", alt: "Vue choix carte" }
     ]
   },
   saeWeb: {
     slug: "sae-web",
-    title: "SAE Application Web",
-    description: "Plateforme de recherche de stage et alternance developpee en equipe.",
-    technologies: ["Web", "PHP", "MySQL"],
+    title: "Projet SAE - Plateforme Stage/Alternance",
+    description:
+      "Plateforme qui facilite la recherche de stages et d'alternances pour les etudiants.",
+    technologies: ["PHP", "JavaScript", "HTML", "CSS", "Trello"],
     categories: ["Web"],
     year: "2023",
     githubUrl: "https://github.com/BakaAsta/sae-stage-alternance",
@@ -138,88 +178,133 @@ export const projectDetails = {
       { name: "Alexandre", url: "https://gitlabinfo.iutmontp.univ-montp2.fr/chateauvieuxa" }
     ],
     context:
-      "Projet d'equipe visant a faciliter la recherche de stage et d'alternance pour les etudiants.",
+      "Projet realise au semestre 3 pour centraliser les offres de stage et d'alternance et faciliter les echanges avec les entreprises.",
     methods: [
-      "Organisation en sprints courts avec suivi Trello.",
-      "Definition de roles pour la conception, le dev et les tests.",
-      "Integres de feedback utilisateurs pour ajuster les ecrans."
+      "Organisation Scrum avec PO et Scrum Master.",
+      "Suivi des taches sur Trello avec estimation des priorites.",
+      "Developpement en iterations avec validations regulieres."
     ],
     results: [
-      "Plateforme fonctionnelle avec recherche et candidature.",
-      "Base de donnees structuree pour les offres et profils.",
-      "Livraison dans les delais du semestre."
+      "Interface claire pour consulter et postuler aux offres.",
+      "Espace entreprise pour publier et gerer les candidatures.",
+      "Tableau de bord administrateur pour la moderation."
     ],
     skills: {
-      "C5 : Conduire un projet": [
-        "Planification et suivi agile.",
-        "Coordination et communication d'equipe."
+      "C1 : Realiser un developpement d'application": [
+        "Conception et developpement des fonctionnalites cles.",
+        "Tests unitaires et validation des parcours."
       ],
-      "C1 : Developpement d'application": [
-        "Integration front/back en PHP."
+      "C2 : Concevoir des interfaces utilisateur": [
+        "Creation d'une interface ergonomique et responsive.",
+        "Integration des retours utilisateurs pour ameliorer l'experience."
+      ],
+      "C3 : Gerer un projet": [
+        "Organisation des sprints hebdomadaires.",
+        "Respect des delais et des priorites."
+      ],
+      "C4 : Gerer des donnees de l'information": [
+        "Conception d'une base MySQL.",
+        "Optimisation des requetes pour les performances."
+      ],
+      "C5 : Collaborer au sein d'une equipe informatique": [
+        "Participation aux reunions et revues de code.",
+        "Utilisation de Git pour la gestion collaborative."
+      ],
+      "C6 : Assurer la qualite et la securite des services informatiques": [
+        "Mise en place de validations et de bonnes pratiques de securite."
       ]
     },
     images: [
-      { src: "/placeholder.svg", alt: "Apercu SAE application web" }
+      { src: "/img/portfolio/saeWeb.png", alt: "Page d'accueil" },
+      { src: "/img/portfolio/saeWeb2.png", alt: "Liste et gestion des offres" },
+      { src: "/img/portfolio/saeWeb3.png", alt: "Tableau de bord admin" },
+      { src: "/img/portfolio/saeWeb4.png", alt: "Gestion des etudiants" }
     ]
   },
   musicPromo: {
     slug: "music-promo",
     title: "Promotion Musicale",
-    description: "Site web personnel pour la promotion d'artistes et evenements musicaux.",
+    description: "Site web personnel pour la promotion d'artistes et d'evenements musicaux.",
     technologies: ["HTML", "CSS", "JavaScript"],
     categories: ["Web"],
     year: "2022",
     githubUrl: "https://github.com/BakaAsta/Personal_MusicProject",
     context:
-      "Projet personnel pour experimenter les bases du web et valoriser des evenements musicaux.",
+      "Projet personnel pour experimenter les bases du web et mettre en avant des evenements musicaux.",
     methods: [
       "Integration statique responsive.",
-      "Mise en avant de contenus multimedia.",
-      "Optimisation basique du chargement des pages."
+      "Mise en valeur des contenus multimedia.",
+      "Optimisation basique des temps de chargement."
     ],
     results: [
       "Site vitrine clair et accessible.",
       "Structure reutilisable pour d'autres evenements."
     ],
     skills: {
-      "C1 : Developpement d'application": [
+      "C1 : Realiser un developpement d'application": [
         "Integration HTML/CSS/JS.",
         "Mise en page responsive."
       ]
     },
-    images: [
-      { src: "/placeholder.svg", alt: "Page d'accueil Promotion Musicale" }
-    ]
+    images: [{ src: "/img/portfolio/music.png", alt: "Page d'accueil Promotion Musicale" }]
   },
   leonn: {
     slug: "leonn",
-    title: "Gestionnaire Leonn",
-    description: "Application de gestion de prets developpee en solo.",
-    technologies: ["Web", "PHP", "MySQL"],
+    title: "Projet Leonn - Gestion de prets et inventaire",
+    description:
+      "Application interne pour suivre les prets de materiel, les retours et l'inventaire informatique.",
+    technologies: [
+      "Symfony 6.4",
+      "PHP 8.2",
+      "Tailwind CSS",
+      "ReactJS",
+      "API Platform",
+      "Typesense",
+      "JWT",
+      "Docker",
+      "Twig Live Components"
+    ],
     categories: ["Web"],
     year: "2024",
     githubUrl: "https://github.com/BakaAsta/leonn",
     context:
-      "Application interne pour suivre les prets de materiel et l'inventaire informatique.",
+      "Projet realise au sein du service informatique de l'ECIR pour ameliorer la gestion des prets et du parc materiel.",
     methods: [
-      "Recueil des besoins aupres des utilisateurs.",
-      "Mise en place d'un tableau de bord pour les responsables.",
-      "Tests fonctionnels et retours rapides."
+      "Sprints hebdomadaires avec livraisons iteratives.",
+      "Microsoft Teams pour la communication et Planner pour les taches.",
+      "Docker pour isoler les services."
     ],
     results: [
-      "Suivi fiable des emprunts et des retours.",
-      "Reduction des erreurs de saisie et des pertes materiels."
+      "Tableau de bord interactif avec alertes en temps reel.",
+      "Gestion efficace du parc informatique.",
+      "Liste dynamique des produits disponibles.",
+      "Interface utilisateur intuitive et adaptee.",
+      "Mecanismes pour optimiser le temps des utilisateurs."
     ],
     skills: {
-      "C4 : Gerer des donnees": [
-        "Conception d'un modele de donnees simple et fiable."
+      "C1 : Realiser un developpement d'application": [
+        "Conception et implementation des interfaces utilisateur.",
+        "Tests unitaires et validation des fonctionnalites."
       ],
-      "C6 : Collaborer": [
-        "Adaptation aux retours des utilisateurs metier."
+      "C4 : Gerer des donnees de l'information": [
+        "Conception et administration d'une base relationnelle.",
+        "Optimisation des requetes SQL."
+      ],
+      "C5 : Conduire un projet": [
+        "Gestion des echeances et suivi des taches.",
+        "Formalisation des besoins et validation des livrables."
+      ],
+      "C6 : Collaborer au sein d'une equipe informatique": [
+        "Participation aux reunions hebdomadaires.",
+        "Partage d'informations et resolution collaborative."
       ]
     },
     images: [
-      { src: "/placeholder.svg", alt: "Tableau de bord Leonn" }
+      { src: "/img/portfolio/leonn.png", alt: "Dashboard Leonn" },
+      { src: "/img/listeProductAvailableUser.png", alt: "Gestion d'inventaire" },
+      { src: "/img/scanLeonn.png", alt: "Systeme de tickets" },
+      { src: "/img/scan.png", alt: "Processus de scan" },
+      { src: "/img/dockerLeonn.png", alt: "Docker" }
     ]
   },
   annuairePt1: {
@@ -235,7 +320,7 @@ export const projectDetails = {
       { name: "Lisa", url: "https://github.com/lisaachr" }
     ],
     context:
-      "Projet de groupe pour construire un annuaire complet avec gestion des droits.",
+      "Projet de groupe pour construire un annuaire complet avec gestion des droits et securisation des acces.",
     methods: [
       "Architecture Symfony et separation des roles.",
       "Mise en place d'API internes pour les fonctions critiques.",
@@ -246,22 +331,20 @@ export const projectDetails = {
       "Interface simple pour l'administration."
     ],
     skills: {
-      "C4 : Gerer des donnees": [
-        "Optimisation des requetes et index."
-      ],
-      "C1 : Developpement d'application": [
-        "Structure MVC Symfony."
-      ]
+      "C4 : Gerer des donnees": ["Optimisation des requetes et index."],
+      "C1 : Developpement d'application": ["Structure MVC Symfony."]
     },
     images: [
-      { src: "/placeholder.svg", alt: "Ecran annuaire Symfony" }
+      { src: "/img/portfolio/annuaire.png", alt: "Ecran annuaire" },
+      { src: "/img/portfolio/annuaire2.png", alt: "Liste des contacts" },
+      { src: "/img/portfolio/annuaire3.png", alt: "Fiche profil" }
     ]
   },
   apiRestPt2: {
     slug: "api-rest-pt2",
     title: "API REST (Projet pt-2)",
-    description: "API REST securisee avec authentification JWT.",
-    technologies: ["Symfony", "API Platform", "JWT"],
+    description: "API REST pour la gestion d'evenements musicaux avec securisation JWT.",
+    technologies: ["Symfony", "API Platform", "JWT", "Doctrine ORM"],
     categories: ["Web"],
     year: "2024",
     githubUrl: "https://github.com/PoweredBySymfony/Projet-API-REST",
@@ -270,33 +353,46 @@ export const projectDetails = {
       { name: "Lisa", url: "https://github.com/lisaachr" }
     ],
     context:
-      "Conception d'une API securisee pour la gestion d'entites metier.",
+      "Projet realise dans le cadre du TD4 Symfony pour creer une API REST de gestion d'evenements musicaux.",
     methods: [
-      "Definition des ressources API Platform et des droits.",
-      "Mise en place d'une authentification JWT.",
-      "Tests avec Postman et validation des contrats."
+      "Developpement avec Symfony et API Platform.",
+      "Authentification JWT pour securiser les acces.",
+      "Versionnage et collaboration via GitHub."
     ],
     results: [
-      "API securisee et documentee.",
-      "Endpoints stables pour les front-ends."
+      "Gestion complete des evenements et des scenes.",
+      "Routes pour consulter les evenements publics et les details.",
+      "Fixtures pour peupler la base de donnees."
     ],
     skills: {
-      "C3 : Administrer": [
-        "Securisation d'API et gestion des acces."
+      "C1 : Realiser un developpement d'application": [
+        "Conception et implementation d'une API REST.",
+        "Gestion des routes, serialisation et validation."
       ],
-      "C1 : Developpement d'application": [
-        "Modelisation des ressources API."
+      "C4 : Gerer des donnees de l'information": [
+        "Modelisation des relations entre entites.",
+        "Optimisation des requetes."
+      ],
+      "C5 : Conduire un projet": [
+        "Organisation des taches et suivi des echeances.",
+        "Documentation et tests unitaires."
+      ],
+      "C6 : Collaborer au sein d'une equipe informatique": [
+        "Utilisation d'outils collaboratifs et partage des avancements."
       ]
     },
     images: [
-      { src: "/placeholder.svg", alt: "Documentation API REST" }
+      { src: "/img/listeEventApi.png", alt: "Liste des evenements" },
+      { src: "/img/jwtApi.png", alt: "Authentification JWT" },
+      { src: "/img/fixtures.png", alt: "Fixtures" }
     ]
   },
   frontVuePt3: {
     slug: "front-vue-pt3",
     title: "Front VueJS (Projet pt-3)",
-    description: "Interface responsive developpee avec Vue.js, Tailwind CSS et PrimeVue.",
-    technologies: ["Vue.js", "Tailwind CSS", "PrimeVue"],
+    description:
+      "Interface Vue.js pour consommer l'API REST des evenements musicaux.",
+    technologies: ["Vue.js", "Tailwind CSS", "PrimeVue", "Axios", "TypeScript"],
     categories: ["Web"],
     year: "2024",
     githubUrl: "https://github.com/lisaachr/api_front",
@@ -305,55 +401,91 @@ export const projectDetails = {
       { name: "Lisa", url: "https://github.com/lisaachr" }
     ],
     context:
-      "Creation d'un front consommatrice d'une API REST avec focus sur l'experience utilisateur.",
+      "Projet front-end permettant aux utilisateurs de consulter et gerer leur participation aux evenements musicaux.",
     methods: [
-      "Composition de composants UI reutilisables.",
-      "Responsive design avec Tailwind CSS.",
-      "Integration des flux API et gestion des etats."
+      "Vue Router pour la gestion des routes.",
+      "Composants reutilisables avec PrimeVue.",
+      "Integration API avec Axios et design responsive Tailwind CSS."
     ],
     results: [
-      "Interface claire et rapide.",
-      "Navigation fluide sur mobile et desktop."
+      "Interface intuitive pour consulter les evenements.",
+      "Inscription, authentification et gestion de profil.",
+      "Gestion des inscriptions et notifications."
     ],
     skills: {
-      "C1 : Developpement d'application": [
-        "Integration d'un front moderne Vue.js."
+      "C1 : Realiser un developpement d'application": [
+        "Conception et developpement de l'interface front-end.",
+        "Integration avec l'API REST."
+      ],
+      "C3 : Concevoir une interface utilisateur": [
+        "Creation de composants dynamiques.",
+        "Navigation fluide et UX soignee."
+      ],
+      "C4 : Gerer des donnees de l'information": [
+        "Affichage et validation des donnees utilisateurs."
+      ],
+      "C5 : Conduire un projet": [
+        "Planification des etapes et collaboration via GitHub."
       ]
     },
     images: [
-      { src: "/placeholder.svg", alt: "Interface front VueJS" }
+      { src: "/img/portfolio/frontVueJs.png", alt: "Interface d'accueil" },
+      { src: "/img/portfolio/frontVueJs2.png", alt: "Liste des evenements" },
+      { src: "/img/portfolio/frontVueJs3.png", alt: "Liste des scenes" },
+      { src: "/img/portfolio/frontVueJs4.png", alt: "Formulaire d'inscription" },
+      { src: "/img/portfolio/frontVueJs5.png", alt: "Formulaire de connexion" }
     ]
   },
   trelloTrolle: {
     slug: "trello-trolle",
     title: "Trello Trolle",
-    description: "Amelioration et optimisation d'une application existante de type Trello.",
-    technologies: ["PHP", "SQL", "Refactoring"],
+    description:
+      "Amelioration d'une application type Trello avec refactorisation et ajouts JS natif.",
+    technologies: ["PHP", "CSS", "JavaScript", "Docker"],
     categories: ["Web"],
     year: "2023",
     githubUrl: "https://github.com/BakaAsta/trellotrolle-code-de-base",
-    collaborators: [
-      { name: "Theo" },
-      { name: "Lisa", url: "https://github.com/lisaachr" }
-    ],
+    collaborators: [{ name: "Theo" }, { name: "Lisa", url: "https://github.com/lisaachr" }],
     context:
-      "Projet centre sur l'analyse et l'optimisation d'un code base existant.",
+      "Projet du semestre 4 pour corriger un code volontairement imparfait et renforcer les bonnes pratiques.",
     methods: [
-      "Audit de performances et lecture de code.",
-      "Refactoring progressif et documentation.",
-      "Optimisation des requetes SQL."
+      "Refactorisation PHP et nettoyage CSS.",
+      "Ajout d'interactions dynamiques en JavaScript natif.",
+      "Communication asynchrone entre frontend et backend."
     ],
     results: [
-      "Performances ameliorees sur les listes.",
-      "Code plus lisible et plus stable."
+      "Interface fluide et interactive.",
+      "Amelioration des performances et de la maintenabilite.",
+      "Backend plus robuste et conforme aux standards."
     ],
     skills: {
-      "C2 : Optimisation": [
-        "Refactoring et amelioration des performances."
+      "C1 : Realiser un developpement d'application": [
+        "Refactorisation et correction des bugs PHP.",
+        "Ajout de nouvelles fonctionnalites serveur et client."
+      ],
+      "C2 : Concevoir des interfaces utilisateur": [
+        "Creation d'une interface intuitive avec CSS et JS natif.",
+        "Amelioration de l'ergonomie et de la fluidite."
+      ],
+      "C3 : Gerer un projet": [
+        "Gestion des taches en equipe et respect des delais.",
+        "Suivi de l'avancement sur Trello."
+      ],
+      "C4 : Gerer des donnees de l'information": [
+        "Optimisation des requetes SQL.",
+        "Architecture de base de donnees efficace."
+      ],
+      "C5 : Collaborer au sein d'une equipe informatique": [
+        "Utilisation de Git pour le versionnage.",
+        "Revues de code regulieres."
+      ],
+      "C6 : Assurer la qualite et la securite des services informatiques": [
+        "Validation des entrees utilisateur et prevention XSS/SQLi.",
+        "Amelioration de la maintenabilite du code."
       ]
     },
     images: [
-      { src: "/placeholder.svg", alt: "Tableau Trello Trolle" }
+      { src: "/img/portfolio/trello.png", alt: "Interface Trello Trolle" }
     ]
   }
 } satisfies Record<string, ProjectDetail>;

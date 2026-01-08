@@ -73,6 +73,18 @@ const Portfolio = () => {
                   transition={{ duration: 0.3, delay: index * 0.05 }}
                 >
                   <div className="skill-card rounded-xl p-6 h-full flex flex-col group">
+                    <Link
+                      to={`/project/${project.slug}`}
+                      className="mb-4 overflow-hidden rounded-lg"
+                      aria-label={`Voir le projet ${project.title}`}
+                    >
+                      <img
+                        src={project.images[0]?.src}
+                        alt={project.images[0]?.alt ?? project.title}
+                        className="h-40 w-full object-cover transition-transform duration-500 group-hover:scale-105"
+                        loading="lazy"
+                      />
+                    </Link>
                     <div className="flex items-start justify-between mb-4">
                       <div className="w-12 h-12 rounded-xl bg-gradient-to-br from-primary/20 to-accent/20 flex items-center justify-center">
                         <Github className="w-5 h-5 text-primary" />
@@ -88,12 +100,14 @@ const Portfolio = () => {
                       </a>
                     </div>
 
-                    <Link
-                      to={`/project/${project.slug}`}
+                    <a
+                      href={project.githubUrl}
+                      target="_blank"
+                      rel="noopener noreferrer"
                       className="text-lg font-semibold mb-2 hover:text-primary hover:underline transition-colors"
                     >
                       {project.title}
-                    </Link>
+                    </a>
                     <p className="text-sm text-muted-foreground mb-4 flex-1">
                       {project.description}
                     </p>
