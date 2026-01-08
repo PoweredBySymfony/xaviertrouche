@@ -1,19 +1,20 @@
 import { useRef } from "react";
-import { useParams } from "react-router-dom";
+import { useNavigate, useParams } from "react-router-dom";
 import { motion } from "framer-motion";
 import ImageGallery from "react-image-gallery";
 import "react-image-gallery/styles/css/image-gallery.css";
-import { Github } from "lucide-react";
+import { ArrowLeft, Github } from "lucide-react";
 import { Header } from "@/components/Header";
 import { Footer } from "@/components/Footer";
 import { Button } from "@/components/ui/button";
-import { projectDetails } from "@/data/projects";
+import { projects } from "@/data/projects";
 import NotFound from "./NotFound";
 
 const ProjectPage = () => {
   const { slug } = useParams();
-  const project = slug ? projectDetails[slug as keyof typeof projectDetails] : undefined;
+  const project = slug ? projects.find((item) => item.slug === slug) : undefined;
   const galleryRef = useRef<ImageGallery | null>(null);
+  const navigate = useNavigate();
 
   if (!project) {
     return <NotFound />;
@@ -31,6 +32,17 @@ const ProjectPage = () => {
       <Header />
       <main className="pt-32 pb-24">
         <div className="section-container">
+          <button
+            type="button"
+            onClick={() => navigate(-1)}
+            aria-label="Retour a la page precedente"
+            className="inline-flex items-center gap-2 text-sm text-muted-foreground hover:text-primary transition-colors mb-6"
+          >
+            <span className="inline-flex h-8 w-8 items-center justify-center rounded-full border border-border/70 bg-card/60">
+              <ArrowLeft className="h-4 w-4" />
+            </span>
+            Retour
+          </button>
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}

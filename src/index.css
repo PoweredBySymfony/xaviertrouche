@@ -169,15 +169,51 @@
   
   /* Timeline styles */
   .timeline-item {
-    @apply relative pl-10 pb-10 border-l-2 border-border;
+    @apply relative pl-10 pb-10;
   }
-  
+
   .timeline-item:last-child {
-    @apply border-l-transparent pb-0;
+    @apply pb-0;
   }
-  
+
+  .timeline-item::before {
+    content: '';
+    @apply absolute left-0 top-4 bottom-0 w-0.5 bg-border;
+  }
+
   .timeline-dot {
-    @apply absolute left-0 top-1 w-4 h-4 -translate-x-1/2 rounded-full border-2 border-primary bg-background;
+    @apply absolute left-0 top-2 w-4 h-4 -translate-x-1/2 rounded-full border-2 border-primary bg-background transition-colors duration-300;
+  }
+
+  .timeline-item:last-child::before {
+    @apply hidden;
+  }
+
+  .timeline-item:hover .timeline-dot,
+  .timeline-item:focus-within .timeline-dot {
+    @apply bg-primary;
+  }
+
+  .apprentissage-item {
+    @apply relative pl-6;
+  }
+
+  .apprentissage-item::before {
+    content: '';
+    @apply absolute left-0 top-4 bottom-0 w-0.5 bg-border transition-colors;
+  }
+
+  .apprentissage-item:last-child::before {
+    @apply hidden;
+  }
+
+  .apprentissage-dot {
+    @apply absolute -left-2 top-0 w-4 h-4 rounded-full border-2 border-primary bg-background transition-colors duration-300;
+  }
+
+  .apprentissage-item:hover .apprentissage-dot,
+  .apprentissage-item:focus-within .apprentissage-dot {
+    @apply bg-primary;
   }
   
   /* Section container */

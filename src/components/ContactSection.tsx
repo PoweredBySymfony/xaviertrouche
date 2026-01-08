@@ -24,7 +24,7 @@ const contactLinks = [
   {
     icon: MapPin,
     label: "Localisation",
-    value: "Montpellier, France",
+    value: "Marseille, France",
     href: null,
   },
 ];

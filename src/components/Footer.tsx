@@ -17,7 +17,7 @@ export const Footer = () => {
           </div>
           
           <p className="text-sm text-muted-foreground flex items-center gap-1">
-            © {currentYear} • Fait avec <Heart className="w-4 h-4 text-primary" /> à Montpellier
+            © {currentYear} • Fait avec <Heart className="w-4 h-4 text-primary" /> à Marseille
           </p>
         </div>
       </div>

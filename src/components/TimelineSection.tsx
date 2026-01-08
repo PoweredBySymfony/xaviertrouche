@@ -100,7 +100,7 @@ const TimelineCard = ({ item, index }: { item: TimelineItem; index: number }) =>
       whileInView={{ opacity: 1, x: 0 }}
       transition={{ duration: 0.5, delay: index * 0.1 }}
       viewport={{ once: true, margin: "-50px" }}
-      className="timeline-item"
+      className="timeline-item group"
     >
       <div className="timeline-dot">
         <span className="absolute -left-1 -top-1 w-6 h-6 bg-primary/20 rounded-full animate-ping" />

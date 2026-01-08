@@ -1,7 +1,8 @@
 import { motion } from "framer-motion";
 import { Header } from "@/components/Header";
 import { Footer } from "@/components/Footer";
-import { Code2, Cpu, Server, Database, Users, Briefcase, ExternalLink } from "lucide-react";
+import { Code2, Cpu, Server, Database, Users, Briefcase, ArrowUpRight } from "lucide-react";
+import { Link } from "react-router-dom";
 
 interface Competence {
   icon: typeof Code2;
@@ -13,6 +14,7 @@ interface Competence {
     projet: {
       name: string;
       url: string;
+      slug: string;
     };
     details: string;
   }[];
@@ -30,6 +32,7 @@ const competences: Competence[] = [
         projet: {
           name: "Les Aventuriers du Rail – Partie 1",
           url: "https://github.com/BakaAsta/RailsIhmPart1",
+          slug: "railsPt1",
         },
         details:
           "J'ai conçu une application complète en partant d'un cahier des charges précis. J'ai suivi une approche incrémentale pour garantir la cohérence fonctionnelle tout au long du développement. L'utilisation de GitLab pour la gestion du code et JUnit pour les tests unitaires m'a permis de structurer efficacement le projet et d'assurer sa robustesse.",
@@ -40,6 +43,7 @@ const competences: Competence[] = [
         projet: {
           name: "Front API REST",
           url: "https://github.com/lisaachr/api_front",
+          slug: "front-vue-pt3",
         },
         details:
           "En développant une interface responsive avec Vue.js, Tailwind CSS et PrimeVue, j'ai rendu l'application accessible sur mobile et desktop. L'intégration d'API REST m'a permis d'assurer une communication fluide entre le backend et le frontend, garantissant une expérience utilisateur optimale.",
@@ -57,6 +61,7 @@ const competences: Competence[] = [
         projet: {
           name: "Les Aventuriers du Graphe – Partie 2",
           url: "https://github.com/BakaAsta/RailsIhmPart2",
+          slug: "railsPt2",
         },
         details:
           "J'ai mis en œuvre des algorithmes avancés comme Dijkstra pour optimiser les trajets du jeu. Cette expérience m'a permis d'affiner ma compréhension des structures de données et d'améliorer l'efficacité des calculs en optimisant le temps d'exécution.",
@@ -67,6 +72,7 @@ const competences: Competence[] = [
         projet: {
           name: "SAE - Trello Trollé",
           url: "https://github.com/BakaAsta/trellotrolle-code-de-base",
+          slug: "trello-trolle",
         },
         details:
           "Ce projet était centré sur l'amélioration d'un code existant. J'ai analysé et optimisé les performances en refactorisant le code PHP et en mettant en place des requêtes SQL plus efficaces. Cette expérience m'a permis de mieux comprendre l'impact des choix d'implémentation sur les performances globales.",
@@ -84,6 +90,7 @@ const competences: Competence[] = [
         projet: {
           name: "API REST - Gestion d'Événements Musicaux",
           url: "https://github.com/PoweredBySymfony/Projet-API-REST",
+          slug: "api-rest-pt2",
         },
         details:
           "J'ai appris à déployer une API sécurisée en utilisant Symfony et API Platform. J'ai configuré une authentification JWT et mis en place des endpoints optimisés pour gérer efficacement les événements.",
@@ -102,6 +109,7 @@ const competences: Competence[] = [
         projet: {
           name: "Annuaire Symfony",
           url: "https://github.com/projets-xil/s5-web-projet1",
+          slug: "annuaire-pt1",
         },
         details:
           "J'ai optimisé la base de données en mettant en place des index et en optimisant les requêtes SQL. J'ai également sécurisé l'application en gérant les rôles et permissions des utilisateurs pour assurer la confidentialité des données.",
@@ -119,6 +127,7 @@ const competences: Competence[] = [
         projet: {
           name: "SAE - Plateforme Stage/Alternance",
           url: "https://github.com/BakaAsta/sae-stage-alternance",
+          slug: "sae-web",
         },
         details:
           "Ce projet m'a appris à suivre un projet avec la méthodologie Scrum. J'ai utilisé Trello pour gérer les tâches, défini des sprints hebdomadaires et assuré une communication régulière avec l'équipe.",
@@ -136,6 +145,7 @@ const competences: Competence[] = [
         projet: {
           name: "Leonn - Gestion de Prêts",
           url: "https://github.com/BakaAsta/leonn",
+          slug: "leonn",
         },
         details:
           "J'ai travaillé en collaboration avec une équipe en utilisant Microsoft Teams et Planner. J'ai appris à répartir les responsabilités et à assurer un suivi efficace du projet.",
@@ -146,6 +156,7 @@ const competences: Competence[] = [
         projet: {
           name: "SAE - Plateforme Stage/Alternance",
           url: "https://github.com/BakaAsta/sae-stage-alternance",
+          slug: "sae-web",
         },
         details:
           "Dans ce projet d'équipe, j'ai pris des responsabilités de coordination et de management, assurant la communication entre les membres et le suivi des objectifs.",
@@ -203,9 +214,9 @@ const Apprentissage = () => {
                       whileInView={{ opacity: 1, x: 0 }}
                       transition={{ duration: 0.4, delay: levelIndex * 0.1 }}
                       viewport={{ once: true }}
-                      className="relative pl-6 border-l-2 border-border hover:border-primary transition-colors"
+                      className="apprentissage-item group"
                     >
-                      <div className="absolute -left-2 top-0 w-4 h-4 rounded-full bg-primary/20 border-2 border-primary" />
+                      <div className="apprentissage-dot" />
                       
                       <div className="mb-2">
                         <span className="inline-block px-3 py-1 text-xs font-semibold bg-primary/10 text-primary rounded-full">
@@ -215,15 +226,13 @@ const Apprentissage = () => {
                       
                       <h3 className="text-lg font-semibold mb-2">{level.description}</h3>
                       
-                      <a
-                        href={level.projet.url}
-                        target="_blank"
-                        rel="noopener noreferrer"
+                      <Link
+                        to={`/project/${level.projet.slug}`}
                         className="inline-flex items-center gap-2 text-primary hover:underline mb-3 group"
                       >
                         <span className="font-medium">{level.projet.name}</span>
-                        <ExternalLink className="w-4 h-4 group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-transform" />
-                      </a>
+                        <ArrowUpRight className="w-4 h-4 group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-transform" />
+                      </Link>
                       
                       <p className="text-muted-foreground text-sm leading-relaxed">
                         {level.details}
