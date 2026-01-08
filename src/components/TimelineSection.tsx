@@ -20,7 +20,8 @@ const timelineItems: TimelineItem[] = [
     place: "Développeur Full-Stack",
     description: "Alternance en cours - Développement d'applications web modernes.",
     date: "2024 - Présent",
-    type: "work"
+    type: "work",
+    detailHref: "/experience/nocika"
   },
   {
     icon: Briefcase,
@@ -67,6 +68,31 @@ const timelineItems: TimelineItem[] = [
 
 const TimelineCard = ({ item, index }: { item: TimelineItem; index: number }) => {
   const Icon = item.icon;
+  const cardContent = (
+    <div className="skill-card rounded-xl p-5 group">
+      <div className="flex items-start gap-4">
+        <div className="w-10 h-10 rounded-lg bg-primary/10 flex items-center justify-center flex-shrink-0">
+          <Icon className="w-5 h-5 text-primary" />
+        </div>
+        <div className="flex-1 min-w-0">
+          <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-1 mb-1">
+            {item.detailHref ? (
+              <span className="font-semibold text-foreground group-hover:text-primary transition-colors">
+                {item.title}
+              </span>
+            ) : (
+              <h3 className="font-semibold text-foreground">{item.title}</h3>
+            )}
+            <span className="text-xs font-medium text-primary bg-primary/10 px-2 py-1 rounded-full w-fit">
+              {item.date}
+            </span>
+          </div>
+          <p className="text-sm text-muted-foreground mb-2">{item.place}</p>
+          <p className="text-sm text-muted-foreground/80">{item.description}</p>
+        </div>
+      </div>
+    </div>
+  );
   
   return (
     <motion.div
@@ -79,33 +105,18 @@ const TimelineCard = ({ item, index }: { item: TimelineItem; index: number }) =>
       <div className="timeline-dot">
         <span className="absolute -left-1 -top-1 w-6 h-6 bg-primary/20 rounded-full animate-ping" />
       </div>
-      
-      <div className="skill-card rounded-xl p-5">
-        <div className="flex items-start gap-4">
-          <div className="w-10 h-10 rounded-lg bg-primary/10 flex items-center justify-center flex-shrink-0">
-            <Icon className="w-5 h-5 text-primary" />
-          </div>
-          <div className="flex-1 min-w-0">
-            <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-1 mb-1">
-              {item.detailHref ? (
-                <Link
-                  to={item.detailHref}
-                  className="font-semibold text-foreground hover:text-primary hover:underline transition-colors"
-                >
-                  {item.title}
-                </Link>
-              ) : (
-                <h3 className="font-semibold text-foreground">{item.title}</h3>
-              )}
-              <span className="text-xs font-medium text-primary bg-primary/10 px-2 py-1 rounded-full w-fit">
-                {item.date}
-              </span>
-            </div>
-            <p className="text-sm text-muted-foreground mb-2">{item.place}</p>
-            <p className="text-sm text-muted-foreground/80">{item.description}</p>
-          </div>
-        </div>
-      </div>
+
+      {item.detailHref ? (
+        <Link
+          to={item.detailHref}
+          className="block focus:outline-none focus-visible:ring-2 focus-visible:ring-primary/40 rounded-xl"
+          aria-label={`Voir le detail ${item.title}`}
+        >
+          {cardContent}
+        </Link>
+      ) : (
+        cardContent
+      )}
     </motion.div>
   );
 };

@@ -59,7 +59,21 @@ const ExperiencePage = () => {
             className="glass-card rounded-2xl p-6 sm:p-8"
           >
             <h2 className="text-xl font-semibold mb-3">Presentation de l'entreprise</h2>
-            <p className="text-muted-foreground leading-relaxed">{experience.serviceDescription}</p>
+            <p className="text-muted-foreground leading-relaxed whitespace-pre-line">
+              {experience.companyDescription}
+            </p>
+          </motion.section>
+
+          <motion.section
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.5, delay: 0.12 }}
+            className="glass-card rounded-2xl p-6 sm:p-8 mt-8"
+          >
+            <h2 className="text-xl font-semibold mb-3">Presentation du service informatique</h2>
+            <p className="text-muted-foreground leading-relaxed whitespace-pre-line">
+              {experience.serviceDescription}
+            </p>
           </motion.section>
 
           <motion.section
@@ -71,7 +85,9 @@ const ExperiencePage = () => {
             <div className="flex flex-col gap-4 sm:flex-row sm:items-center sm:justify-between">
               <div>
                 <h2 className="text-xl font-semibold">{experience.project.title}</h2>
-                <p className="text-muted-foreground mt-2">{experience.project.context}</p>
+                <p className="text-muted-foreground mt-2 whitespace-pre-line">
+                  {experience.project.context}
+                </p>
               </div>
               {experience.project.githubUrl && (
                 <Button asChild className="gap-2">
@@ -82,6 +98,35 @@ const ExperiencePage = () => {
                 </Button>
               )}
             </div>
+
+            {(experience.project.challenges?.length || experience.project.solutions?.length) && (
+              <div className="mt-6 grid gap-6 lg:grid-cols-2">
+                {experience.project.challenges?.length && (
+                  <div>
+                    <h3 className="text-sm font-semibold uppercase tracking-wider text-primary mb-2">
+                      Problemes identifies
+                    </h3>
+                    <ul className="list-disc list-inside text-muted-foreground space-y-2">
+                      {experience.project.challenges.map((item) => (
+                        <li key={item}>{item}</li>
+                      ))}
+                    </ul>
+                  </div>
+                )}
+                {experience.project.solutions?.length && (
+                  <div>
+                    <h3 className="text-sm font-semibold uppercase tracking-wider text-primary mb-2">
+                      Solution proposee
+                    </h3>
+                    <ul className="list-disc list-inside text-muted-foreground space-y-2">
+                      {experience.project.solutions.map((item) => (
+                        <li key={item}>{item}</li>
+                      ))}
+                    </ul>
+                  </div>
+                )}
+              </div>
+            )}
           </motion.section>
 
           <div className="grid gap-6 lg:grid-cols-2 mt-8">
