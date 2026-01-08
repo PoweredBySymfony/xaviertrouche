@@ -1,6 +1,7 @@
 import { motion } from "framer-motion";
 import { GraduationCap, Briefcase, Award, Music } from "lucide-react";
 import { LucideIcon } from "lucide-react";
+import { Link } from "react-router-dom";
 
 interface TimelineItem {
   icon: LucideIcon;
@@ -9,6 +10,7 @@ interface TimelineItem {
   description: string;
   date: string;
   type: "education" | "work" | "certification";
+  detailHref?: string;
 }
 
 const timelineItems: TimelineItem[] = [
@@ -26,7 +28,8 @@ const timelineItems: TimelineItem[] = [
     place: "Mallemort",
     description: "Développement d'un logiciel de gestion de matériel avec Symfony, API Platform et React.",
     date: "2024",
-    type: "work"
+    type: "work",
+    detailHref: "/experience/ecir"
   },
   {
     icon: GraduationCap,
@@ -77,14 +80,23 @@ const TimelineCard = ({ item, index }: { item: TimelineItem; index: number }) =>
         <span className="absolute -left-1 -top-1 w-6 h-6 bg-primary/20 rounded-full animate-ping" />
       </div>
       
-      <div className="skill-card rounded-xl p-5 ml-2">
+      <div className="skill-card rounded-xl p-5">
         <div className="flex items-start gap-4">
           <div className="w-10 h-10 rounded-lg bg-primary/10 flex items-center justify-center flex-shrink-0">
             <Icon className="w-5 h-5 text-primary" />
           </div>
           <div className="flex-1 min-w-0">
             <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-1 mb-1">
-              <h3 className="font-semibold text-foreground">{item.title}</h3>
+              {item.detailHref ? (
+                <Link
+                  to={item.detailHref}
+                  className="font-semibold text-foreground hover:text-primary hover:underline transition-colors"
+                >
+                  {item.title}
+                </Link>
+              ) : (
+                <h3 className="font-semibold text-foreground">{item.title}</h3>
+              )}
               <span className="text-xs font-medium text-primary bg-primary/10 px-2 py-1 rounded-full w-fit">
                 {item.date}
               </span>

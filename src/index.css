@@ -1,11 +1,11 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=JetBrains+Mono:wght@400;500;600&display=swap');
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
 /* Xavier Trouche Portfolio - Modern Design System */
 /* Clean, luminous, tech-inspired aesthetic */
-
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=JetBrains+Mono:wght@400;500;600&display=swap');
 
 @layer base {
   :root {
@@ -169,7 +169,7 @@
   
   /* Timeline styles */
   .timeline-item {
-    @apply relative pl-8 pb-8 border-l-2 border-border;
+    @apply relative pl-10 pb-10 border-l-2 border-border;
   }
   
   .timeline-item:last-child {
@@ -177,7 +177,7 @@
   }
   
   .timeline-dot {
-    @apply absolute -left-[9px] top-0 w-4 h-4 rounded-full border-2 border-primary bg-background;
+    @apply absolute left-0 top-1 w-4 h-4 -translate-x-1/2 rounded-full border-2 border-primary bg-background;
   }
   
   /* Section container */

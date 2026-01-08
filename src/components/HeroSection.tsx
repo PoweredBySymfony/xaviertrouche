@@ -94,7 +94,7 @@ export const HeroSection = () => {
           {[
             { value: "3+", label: "Années d'études" },
             { value: "10+", label: "Projets réalisés" },
-            { value: "5+", label: "Technologies" },
+            { value: "50+", label: "Technologies" },
           ].map((stat, index) => (
             <div key={index} className="text-center">
               <div className="text-2xl sm:text-3xl font-bold text-gradient">{stat.value}</div>
