@@ -109,6 +109,7 @@ const TimelineCard = ({ item, index }: { item: TimelineItem; index: number }) =>
       {item.detailHref ? (
         <Link
           to={item.detailHref}
+          state={{ from: "/#timeline" }}
           className="block focus:outline-none focus-visible:ring-2 focus-visible:ring-primary/40 rounded-xl"
           aria-label={`Voir le detail ${item.title}`}
         >

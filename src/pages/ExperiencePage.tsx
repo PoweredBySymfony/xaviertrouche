@@ -1,5 +1,5 @@
 import { useRef } from "react";
-import { useNavigate, useParams } from "react-router-dom";
+import { useLocation, useNavigate, useParams } from "react-router-dom";
 import { motion } from "framer-motion";
 import ImageGallery from "react-image-gallery";
 import "react-image-gallery/styles/css/image-gallery.css";
@@ -15,6 +15,11 @@ const ExperiencePage = () => {
   const experience = slug ? experienceDetails[slug as keyof typeof experienceDetails] : undefined;
   const galleryRef = useRef<ImageGallery | null>(null);
   const navigate = useNavigate();
+  const location = useLocation();
+  const backTarget =
+    typeof location.state === "object" && location.state && "from" in location.state
+      ? (location.state as { from?: string }).from
+      : "/#timeline";
 
   if (!experience) {
     return <NotFound />;
@@ -32,12 +37,12 @@ const ExperiencePage = () => {
       <Header />
       <main className="pt-32 pb-24">
         <div className="section-container">
-          <button
-            type="button"
-            onClick={() => navigate(-1)}
-            aria-label="Retour a la page precedente"
-            className="inline-flex items-center gap-2 text-sm text-muted-foreground hover:text-primary transition-colors mb-6"
-          >
+            <button
+              type="button"
+            onClick={() => navigate(backTarget)}
+              aria-label="Retour a la page precedente"
+              className="inline-flex items-center gap-2 text-sm text-muted-foreground hover:text-primary transition-colors mb-6"
+            >
             <span className="inline-flex h-8 w-8 items-center justify-center rounded-full border border-border/70 bg-card/60">
               <ArrowLeft className="h-4 w-4" />
             </span>
